@@ -1,0 +1,20 @@
+1.	php artisan make:model todo -mcr
+(Model: todo/app/model/todo.php , 
+Migration: todo/database/migration/todos_table.php,
+Controller: todo/app/Http/Controllers/TodoController.php)
+
+2.	php artisan migrate
+(er kaj hosse database a todos table a making kora. database/migration/2024_04_29_131748_create_todos_table.php ja ager command(1) er maddhome toiry hoice. niche evabe data debar por command chalale database a data in hobe.
+
+ public function up(): void
+    {
+        Schema::create('todos', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->boolean('completed')->default(false);
+            $table->timestamps();
+        });
+)
+
+3.	php artisan migrate:rollback
+( last create kora table delete kore dibe batch no dhore{1,2,3,4 amon hote pare}. )
