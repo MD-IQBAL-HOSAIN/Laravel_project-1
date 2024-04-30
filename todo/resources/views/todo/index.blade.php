@@ -8,11 +8,11 @@
     <li>{{$todo->title}} - {{$todo->description}} - {{$todo->is_completed}}</li>
     @endforeach
 
-    <a href="url('todo.add')" class="btn btn-primary">Create Todo Form</a>
+    <a href="{{url('todo/add')}}" class="btn btn-primary">Create Todo Form</a>
  
 
 
-  @include('inc.footer')
-</body>
+  @include('inc.footer') 
+<!-- </body>
 
-</html>
+</html> -->

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\todo;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
+use Termwind\Components\Dd;
 
 class TodoController extends Controller
 {
@@ -31,7 +33,15 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        echo "todo store function called";
+        // echo "todo store function called";
+        // dd($request->all()); //var_dum laravel
+
+        $todo = new todo();
+        $todo->title = $request->title;
+        $todo->description = $request->description;
+        $todo->is_completed = $request->is_completed ?? 0;
+        $todo->save();
+        return redirect()->route('/todo.index')->with('success', 'Todo created successfully.');
     }
 
     /**

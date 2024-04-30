@@ -20,9 +20,9 @@ Route::get('/contact', function () {
 Route::get('/cart', function () {
     return view('cart');
 });
-Route::get('/todos', [TodoController::class, 'index']);
-Route::get('/todo/add', [TodoController::class, 'create']);
+Route::get('/todos', [TodoController::class, 'index'])->name('todo.index');
 Route::post('/todo', [TodoController::class, 'store']);
+Route::get('/todo/add', [TodoController::class, 'create']);
 
 
 Route::get('/dashboard', function () {
