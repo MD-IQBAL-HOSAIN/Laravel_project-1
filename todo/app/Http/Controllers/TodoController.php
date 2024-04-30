@@ -39,9 +39,9 @@ class TodoController extends Controller
         $todo = new todo();
         $todo->title = $request->title;
         $todo->description = $request->description;
-        $todo->is_completed = $request->is_completed ?? 0;
+        $todo->completed = $request->completed ?? 0;
         $todo->save();
-        return redirect()->route('/todo.index')->with('success', 'Todo created successfully.');
+        return redirect()->route('todo.index')->with('success', 'Todo created successfully.');
     }
 
     /**

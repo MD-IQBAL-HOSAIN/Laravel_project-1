@@ -44,8 +44,8 @@
             <input type="text" class="form-control" name="description" id="description">
         </div>
         <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" value="1" name="is_completed" id="is_completed">
-            <label class="form-check-label" for="is_completed">Is completed</label>
+            <input type="checkbox" class="form-check-input" value="1" name="completed" id="completed">
+            <label class="form-check-label" for="completed">completed</label>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
