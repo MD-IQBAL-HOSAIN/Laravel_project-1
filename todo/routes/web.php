@@ -22,7 +22,7 @@ Route::get('/cart', function () {
 });
 Route::get('/todos', [TodoController::class, 'index'])->name('todo.index');
 Route::post('/todo', [TodoController::class, 'store']);
-Route::get('/todo/add', [TodoController::class, 'create']);
+Route::get('/todo/add', [TodoController::class, 'create'])->middleware('auth'); //middleware is authentication.
 
 
 Route::get('/dashboard', function () {
