@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\checkAdminRole;
 use App\Models\todo;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,7 @@ Route::get('/todos', [TodoController::class, 'index'])->name('todo.index');
 Route::middleware(checkAdminRole::class)->group(function () { 
 Route::post('/todo', [TodoController::class, 'store']);
 Route::get('/todo/add', [TodoController::class, 'create']); 
+Route::get('/users', [UserController::class, 'index']); 
 });
 
 

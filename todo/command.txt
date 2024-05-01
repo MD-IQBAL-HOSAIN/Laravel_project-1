@@ -34,3 +34,17 @@
 
 7.	php artisan make:middleware checkAdminRole
 	( checkAdminRole name middleware toiry hoye jabe )
+
+8.	php artisan make:model category -mcrfs
+	( model, controller, resources, factory, seeder)
+
+9.	php artisan db:seed
+	( for data insert in db )
+
+10.	php artisan make:seeder UserSeeder
+	( for make seeder command)
+
+11.	php artisan make:controller UserController -r
+	( for making controlller wirh resources(7 ta j resource thake create, update, edit etc.))
+
+12.	
