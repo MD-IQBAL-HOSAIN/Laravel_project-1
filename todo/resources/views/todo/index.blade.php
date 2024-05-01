@@ -19,6 +19,7 @@
 
     @endguest
     
+    {{time()}}
   {{-- forelse is better than foreach --}}
     @forelse ($todos as $todo)
     <li>{{$todo->title}} - {{$todo->description}} - {{$todo->is_completed}}</li>

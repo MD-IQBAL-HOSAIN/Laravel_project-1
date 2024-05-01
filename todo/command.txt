@@ -1,14 +1,17 @@
 1.	php artisan make:model todo -mcr
-(Model: todo/app/model/todo.php , 
-Migration: todo/database/migration/todos_table.php,
-Controller: todo/app/Http/Controllers/TodoController.php)
+
+	(Model: todo/app/model/todo.php , 
+	Migration: todo/database/migration/todos_table.php,
+	Controller: todo/app/Http/Controllers/TodoController.php)
 
 2.	php artisan migrate
-(er kaj hosse database a todos table a making kora. database/migration/2024_04_29_131748_create_todos_table.php ja ager command(1) er maddhome toiry hoice. niche evabe data debar por command chalale database a data in hobe.
 
- public function up(): void
-    {
-        Schema::create('todos', function (Blueprint $table) {
+	(er kaj hosse database a todos table a making kora. database/migration/2024_04_29_131748_create_todos_table.php ja ager command(1)
+	 er maddhome toiry hoice. niche evabe data debar por 	command chalale database a data in hobe.
+
+ 	public function up(): void {
+   	
+          Schema::create('todos', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->boolean('completed')->default(false);
@@ -17,4 +20,17 @@ Controller: todo/app/Http/Controllers/TodoController.php)
 )
 
 3.	php artisan migrate:rollback
-( last create kora table delete kore dibe batch no dhore{1,2,3,4 amon hote pare}. )
+
+	( last create kora table delete kore dibe batch no dhore{1,2,3,4 amon hote pare}. )
+
+4.	Laravel Directive shikhte hole ai site best.
+	(https://laravel.com/docs/11.x/blade)
+
+5.	php artisan migrate:refresh
+	( rollback hoye abar migrate kore dibe. i mean php artisan migrate and rollback er kaj ek command a hoye jay.
+
+6.	 @style('color:red')
+	( css inline style for Laravel )
+
+7.	php artisan make:middleware checkAdminRole
+	( checkAdminRole name middleware toiry hoye jabe )

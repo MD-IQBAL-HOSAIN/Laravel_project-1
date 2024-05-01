@@ -2,28 +2,30 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TodoController;
+use App\Http\Middleware\checkAdminRole;
 use App\Models\todo;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    // return view('welcome')->name('home');
     return view('welcome');
 });
 Route::get('/products', function () {
     return view('products');
 });
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::get('/cart', function () {
-    return view('cart');
-});
+// Route::get('/about', function () {
+//     return view('about');
+// });
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
+// Route::get('/cart', function () {
+//     return view('cart');
+// });
 Route::get('/todos', [TodoController::class, 'index'])->name('todo.index');
 
 //middleware is authentication.
-Route::middleware('auth')->group(function () { 
+Route::middleware(checkAdminRole::class)->group(function () { 
 Route::post('/todo', [TodoController::class, 'store']);
 Route::get('/todo/add', [TodoController::class, 'create']); 
 });
