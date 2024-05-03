@@ -27,7 +27,7 @@
 	(https://laravel.com/docs/11.x/blade)
 
 5.	php artisan migrate:refresh
-	( rollback hoye abar migrate kore dibe. i mean php artisan migrate and rollback er kaj ek command a hoye jay.
+	( rollback hoye abar migrate kore dibe. i mean php artisan migrate and rollback er kaj ek command a hoye jay. )
 
 6.	 @style('color:red')
 	( css inline style for Laravel )
