@@ -25,6 +25,9 @@ Route::get('/cart', function () {
 });
 Route::get('/todos', [TodoController::class, 'index'])->name('todo.index');
 
+//profile
+Route::get('/profileTest', [UserController::class, 'profileTest']);
+
 //middleware is authentication.
 Route::middleware(checkAdminRole::class)->group(function () { 
 Route::post('/todo', [TodoController::class, 'store']);

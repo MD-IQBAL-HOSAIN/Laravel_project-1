@@ -2,7 +2,11 @@
 
 	(Model: todo/app/model/todo.php , 
 	Migration: todo/database/migration/todos_table.php,
-	Controller: todo/app/Http/Controllers/TodoController.php)
+	Controller: todo/app/Http/Controllers/TodoController.php
+	table creation just)
+
+1.1	php artisan make:migration add_field_table
+	(table customization)
 
 2.	php artisan migrate
 
@@ -52,6 +56,12 @@
 
 13.	php artisan db:seed CategorySeeder
 	(cat. table a data insert)
+
+14.  $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')
+	(one to one relationship most important two lines to create table with 	relationship)
+
+15.	
 
 
 
