@@ -47,4 +47,17 @@
 11.	php artisan make:controller UserController -r
 	( for making controlller wirh resources(7 ta j resource thake create, update, edit etc.))
 
-12.	
+12.	php artisan make:factory abcdFactory
+	(Factory making command. Factory is also pagiantion)
+
+13.	
+
+
+
+
+
+
+
+
+
+

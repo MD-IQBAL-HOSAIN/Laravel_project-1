@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Faker\Guesser\Name;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,12 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->name(),
+            'slug' => fake()->slug(),
+            'description' => fake()->text(),
+            'image' => fake()->imageUrl(),
+            'status' => fake()->boolean(),           
+
         ];
     }
 }

@@ -14,7 +14,7 @@
     <table class="table table-striped table-hover table-bordered table-sm table-responsive text-center">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Roles</th>
@@ -27,6 +27,7 @@
         <tbody>    
             @forelse ($users as $user)
             <tr>
+                <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td >
                 <td>{{ $user->roles }}</td>
