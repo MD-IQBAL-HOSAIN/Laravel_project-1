@@ -27,8 +27,16 @@
 @endsection
 
 @section('sidebar')
-
-<marquee @style('color:green') behavior="" direction=""><h1>Todo sidebar</h1></marquee>
+{{-- '@parent' default value index.blade.php theke neyar jonno er use kora --}}
+@parent
+<ul>
+  <h3>Categories</h3>
+  <li>A</li>
+  <li>B</li>
+  <li>C</li>
+  <li>D</li>
+  <li>E</li>
+</ul>
     
 @endsection
 

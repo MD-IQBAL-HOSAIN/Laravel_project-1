@@ -18,8 +18,16 @@
     <div class="col-md-9">
         @yield('content')
     </div>
+
     <div class="col-md-3">
-        @yield('sidebar')
+      {{-- Rules:1  @yield}}
+        {{-- @yield('sidebar') --}} 
+
+        @section('sidebar')
+        {{-- this is work in default --}}
+        <marquee @style('color:green') behavior="" direction=""><h3>Todo sidebar(default value)</h3></marquee>
+        <hr>
+        @show
     </div>
 </div>
 
