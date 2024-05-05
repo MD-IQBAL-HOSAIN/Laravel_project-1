@@ -15,6 +15,7 @@ class UserController extends Controller
     //   $alluser = User::paginate(10);
     $alluser = User::Paginate(2);
       return view('users.index',['users'=>$alluser]);
+      //(users.index) mean users folder ere index.blade.php file.
     }
 
     /**

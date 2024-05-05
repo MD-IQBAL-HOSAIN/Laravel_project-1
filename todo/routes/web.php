@@ -14,15 +14,15 @@ Route::get('/', function () {
 Route::get('/products', function () {
     return view('products');
 });
-// Route::get('/about', function () {
-//     return view('about');
-// });
-// Route::get('/contact', function () {
-//     return view('contact');
-// });
-// Route::get('/cart', function () {
-//     return view('cart');
-// });
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/cart', function () {
+    return view('cart');
+});
 Route::get('/todos', [TodoController::class, 'index'])->name('todo.index');
 
 //middleware is authentication.

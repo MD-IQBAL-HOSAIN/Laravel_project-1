@@ -1,5 +1,6 @@
-<!--  @include('inc.header')
-@include('inc.navbar')
+<!--  
+    {{-- @include('inc.header')
+@include('inc.navbar') --}}
 
 <div class="container" style="border: 2px solid red; border-radius: 10px">
     <div class="container mt-3">
@@ -26,7 +27,8 @@
         </form>
     </div>
 </div>
-@include('inc.footer')  -->
+{{-- @include('inc.footer') --}}
+  -->
 
 @include('inc.header')
 @include('inc.navbar')

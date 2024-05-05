@@ -1,40 +1,38 @@
-@include('inc.header')
+@extends('layouts.main', ['title' => 'Todo List'])
+@section('content')
+{{-- logged in user er jonno @auth  directive --}}
+@auth 
+<marquee @style('color:red') behavior="" direction="ltr">Only logged in users will see this</marquee>   
+@endauth
+
+{{-- logged out user er jonno @guest  directive --}}
+@guest
+<marquee @style('color:red') behavior="" direction="ltr">Only logged out users will see this</marquee> 
+
+@endguest
+
+{{time()}}
+{{-- forelse is better than foreach --}}
+@forelse ($todos as $todo)
+<li>{{$todo->title}} - {{$todo->description}} - {{$todo->is_completed}}</li>
+
+@empty
+<hr>
+   <h1>No Todo list Found</h1>
+@endforelse
 
 
-    @include('inc.navbar')
-    <hr>
-    <h1>{{$title}}</h1>
-    {{-- @foreach ($todos as $todo)
-    <li>{{$todo->title}} - {{$todo->description}} - {{$todo->is_completed}}</li>
-    @endforeach --}}
+<a href="{{url('todo/add')}}" class="btn btn-primary">Create Todo Form</a>
 
-    {{-- logged in user er jonno @auth  directive --}}
-    @auth 
-     <marquee @style('color:red') behavior="" direction="ltr">Only logged in users will see this</marquee>   
-    @endauth
+@endsection
 
-    {{-- logged out user er jonno @guest  directive --}}
-    @guest
-    <marquee @style('color:red') behavior="" direction="ltr">Only logged out users will see this</marquee> 
+@section('sidebar')
 
-    @endguest
+<marquee @style('color:green') behavior="" direction=""><h1>Todo sidebar</h1></marquee>
     
-    {{time()}}
-  {{-- forelse is better than foreach --}}
-    @forelse ($todos as $todo)
-    <li>{{$todo->title}} - {{$todo->description}} - {{$todo->is_completed}}</li>
+@endsection
 
-    @empty
-    <hr>
-        <h1>No Todo list Found</h1>
-    @endforelse
+
+
+
     
-
-    <a href="{{url('todo/add')}}" class="btn btn-primary">Create Todo Form</a>
- 
-
-
-  @include('inc.footer') 
-<!-- </body>
-
-</html> -->
