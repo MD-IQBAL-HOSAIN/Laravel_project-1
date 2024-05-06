@@ -1,13 +1,16 @@
 @extends('layouts.main', ['title' => 'Categories Management'])
 
 @section('content')
-<h1>Categories Table</h1>
+
 <div class="table-responsive">
+    
     <a href="{{ route('categories.create') }}" class="btn btn-outline-primary btn-sm mb-4"><i class="bi bi-plus-square-fill"></i> Create New Category</a>
     <table class="table table-striped table-hover table-bordered">
+        <h1>Categories Table</h1>
         <thead>
             <tr>
                 <th>#</th>
+                <th>Subcategories</th>
                 <th>Name</th>
                 <th>Slug</th>
                 <th>Description</th>
@@ -22,7 +25,13 @@
             @foreach ($categories as $category)
                 <tr>
                     <td class="text-center">{{ $loop->iteration }}</td>
-                    {{-- <td>{{ $category->id }}</td> --}}
+                    <td>
+                        @forelse ($category->subcategories as $sc)
+                            <li class="text-success">{{ $sc->name }}</li>
+                        @empty
+                            <li class="text-danger">No Subcategories</li>
+                        @endforelse
+                    </td>
                     <td>{{ $category->name }}</td>
                     <td>{{ $category->slug }}</td>
                     <td>{{ $category->description }}</td>

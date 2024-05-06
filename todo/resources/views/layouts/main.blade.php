@@ -10,11 +10,14 @@
 </head>
 
 <body> 
-<div class="container">
+<div class="container-fluid">
    {{-- Navbar start --}}
    @include('inc.navbar')
 {{-- Navbar End --}}
 @include('inc.flash')
+{{-- flash message end --}}
+{{-- Navbar End --}}
+@include('inc.error')
 {{-- flash message end --}}
 
 <div class="row">

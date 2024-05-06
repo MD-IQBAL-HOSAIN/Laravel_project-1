@@ -13,7 +13,7 @@ class CategoryController extends Controller
     public function index()
     {
         // echo "cat index called";
-        $categories = category::paginate(config('global.paginate'));
+        $categories = category::with('subcategories')->paginate(config('global.paginate'));
         // return view('categories.index',compact('categories'));
         return view('categories.index',['categories'=>$categories]);
         // return view('categories.index')->with('categories',$categories);
@@ -35,13 +35,14 @@ class CategoryController extends Controller
         Category::create($request->all());
         return redirect()->route('categories.index')->with('success', 'Category created successfully.');
 
-       /*  $validated = $request->validate([
+        $validated = $request->validate([
             'name' => 'required|unique:categories|max:255',
             'slug'=>'required|unique:categories|max:255',
             'description' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status' => 'required',
         ]);
+         
         // dd($request->all());
 
         // $image = $request->file('image');
@@ -58,7 +59,7 @@ class CategoryController extends Controller
         ];
         // Category::create($request->all());
         Category::create($data);
-        return redirect()->route('categories.index')->with('success', 'Category created successfully.'); */
+        return redirect()->route('categories.index')->with('success', 'Category created successfully.');
     }
 
     /**

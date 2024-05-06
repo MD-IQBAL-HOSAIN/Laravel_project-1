@@ -10,6 +10,15 @@ class subcategory extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'category_id',
+        'name', 
+        'slug', 
+        'description', 
+        'status'
+    ];
+
+
 
     public function category():BelongsTo
     {

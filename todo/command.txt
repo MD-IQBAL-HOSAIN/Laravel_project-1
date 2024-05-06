@@ -61,7 +61,10 @@
             $table->foreign('user_id')->references('id')->on('users')
 	(one to one relationship most important two lines to create table with 	relationship)
 
-15.	
+15.	composer require spatie/Laravel-html
+	( )
+
+16.	
 
 
 
