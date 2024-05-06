@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
@@ -26,14 +28,19 @@ Route::get('/cart', function () {
 Route::get('/todos', [TodoController::class, 'index'])->name('todo.index');
 
 //profile
-Route::get('/profileTest', [UserController::class, 'profileTest']);
+Route::get('/profileTest/{id}', [UserController::class, 'profileTest']);
 
 //middleware is authentication.
 Route::middleware(checkAdminRole::class)->group(function () { 
 Route::post('/todo', [TodoController::class, 'store']);
 Route::get('/todo/add', [TodoController::class, 'create']); 
-Route::get('/users', [UserController::class, 'index']); 
+Route::get('/users', [UserController::class, 'index']);
+// Route::get('/categories', [CategoryController::class, 'index']);
+// Route::get('/subcategories', [SubcategoryController::class, 'index']);
+    
 });
+Route::resource('categories', CategoryController::class);
+Route::resource('subcategories', SubCategoryController::class);
 
 
 Route::get('/dashboard', function () {

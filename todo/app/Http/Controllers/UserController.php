@@ -68,9 +68,9 @@ class UserController extends Controller
     {
         //
     }
-    public function profiletest()
+    public function profiletest($id)
     {
-        $user = User::find(88);
+        $user = User::find($id);
         // return view('users.profile', ['user' => $user]);
         $pro = new profile();
         $pro->first_name=fake()->firstName();
