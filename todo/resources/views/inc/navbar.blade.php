@@ -29,15 +29,12 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Cat. Menu
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ URL('categories') }}">Categories</a></li>
             <li><a class="dropdown-item" href="{{ URL('subcategories') }}">Sub Categories</a></li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
