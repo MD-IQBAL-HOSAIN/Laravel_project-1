@@ -42,7 +42,7 @@ class SubcategoryController extends Controller
      */
     public function show(subcategory $subcategory)
     {
-        //
+       echo "sub cat show function called";
     }
 
     /**
@@ -50,7 +50,11 @@ class SubcategoryController extends Controller
      */
     public function edit(subcategory $subcategory)
     {
-        //
+    //    echo "sub cat edit function called";
+    $c = category::pluck('name', 'id');
+    return view('subcategories.edit')
+    ->with('categories',$c)
+    ->with('subcategory',$subcategory);
     }
 
     /**
@@ -58,7 +62,13 @@ class SubcategoryController extends Controller
      */
     public function update(Request $request, subcategory $subcategory)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'category_id' => 'required|exists:categories,id'
+        ]);
+
+        $subcategory->update($request->all());
+        return redirect()->route('subcategories.index')->with('success', 'Subcategory updated successfully.');
     }
 
     /**
@@ -66,6 +76,6 @@ class SubcategoryController extends Controller
      */
     public function destroy(subcategory $subcategory)
     {
-        //
+        echo "sub cat destroy function called";
     }
 }

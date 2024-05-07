@@ -64,7 +64,9 @@
 15.	composer require spatie/Laravel-html
 	( )
 
-16.	
+16.	php artisan route:list
+	()
+17.	
 
 
 
