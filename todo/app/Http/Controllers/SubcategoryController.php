@@ -42,7 +42,8 @@ class SubcategoryController extends Controller
      */
     public function show(subcategory $subcategory)
     {
-       echo "sub cat show function called";
+    //    echo "sub cat show function called";
+    return view('subcategories.show')->with('subcategory',$subcategory);
     }
 
     /**

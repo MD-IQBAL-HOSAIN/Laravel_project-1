@@ -1,6 +1,7 @@
 @extends('layouts.main', ['title' => 'Subcategories Management'])
 
 @section('content')
+<div class="container">
     <h1 class="text-center">Subcategory Page Here.</h1>
     <hr>
     <a href="{{ route('subcategories.create') }}" class="btn btn-primary">Create Suubcategory</a>
@@ -8,8 +9,8 @@
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
+                <th>S. ID</th>
+                <th>Sub Category</th>
                 <th>Category</th>
                 <th>Created At</th>
                 <th>Updated At</th>
@@ -48,5 +49,6 @@
                 @endforelse 
         </tbody>
     </table>
+</div>
     
 @endsection

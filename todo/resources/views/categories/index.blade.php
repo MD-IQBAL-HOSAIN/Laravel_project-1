@@ -2,11 +2,13 @@
 
 @section('content')
 
-<div class="table-responsive">
+<div class="container">
     
-    <a href="{{ route('categories.create') }}" class="btn btn-outline-primary btn-sm mb-4"><i class="bi bi-plus-square-fill"></i> Create New Category</a>
-    <table class="table table-striped table-hover table-bordered">
-        <h1>Categories Table</h1>
+   <span class="container">
+    <a href="{{ route('categories.create') }}" class="btn btn-outline-primary btn-sm mb-1 mt-3"><i class="bi bi-plus-square-fill"></i> Create New Category</a>
+    <table class="table table-responsive table-striped table-hover table-bordered">
+   </span>
+        <h1 class="text-center">Categories Table</h1>
         <thead>
             <tr>
                 <th>#</th>
@@ -41,19 +43,19 @@
                     <td>{{ $category->updated_at}}</td>
 
                     <td class="text-center">
-                        <div>
-                            <a href="{{route('categories.edit', $category->id)}}"> <i class="bi bi-pencil-square text-primary" style="font-size: 1.5rem;"> </i>
+                        <div class="d-inline">
+                            <a href="{{route('categories.edit', $category->id)}}"> <i class="bi bi-pencil-square text-primary" style="font-size: 20px;"> </i>
                             </a>
     
                             <form action="{{route('categories.destroy', $category->id)}}" method="POST" style="display:inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" title="Delete" onclick="return confirm('Are you sure?')" style="border: none; background-color:transparent;">
-                                    <i class="bi bi-trash fs-4 text-danger"></i>
+                                    <i class="bi bi-trash fs-5 text-danger"></i>
                                 </button>
                             </form>
                         </div>
-                        <a href="{{route('categories.show', $category->id)}}"> <i class="bi bi-eye fs-4 text-info"></i>
+                        <a href="{{route('categories.show', $category->id)}}"> <i class="bi bi-eye fs-5 text-info"></i>
                         </a>                                         
                     </td>
                 </tr>
