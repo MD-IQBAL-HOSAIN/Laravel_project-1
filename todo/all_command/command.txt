@@ -1,11 +1,15 @@
-1.	php artisan make:model todo -mcr
+1. composer require Laravel/breeze --dev
+	(composer e dev dependice e add hobe) then..
+	php artisan breeze:install
+
+1.1	php artisan make:model todo -mcr
 
 	(Model: todo/app/model/todo.php , 
 	Migration: todo/database/migration/todos_table.php,
 	Controller: todo/app/Http/Controllers/TodoController.php
 	table creation just)
 
-1.1	php artisan make:migration add_field_table
+1.2	php artisan make:migration add_field_table
 	(table customization)
 
 2.	php artisan migrate
@@ -65,8 +69,10 @@
 	( )
 
 16.	php artisan route:list
-	()
-17.	
+	(route running list show korbe.)
+
+17.	php artisan install:api
+	(api install code)
 
 
 
