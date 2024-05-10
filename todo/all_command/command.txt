@@ -1,6 +1,9 @@
-1. composer require Laravel/breeze --dev
+1. 	MUST INSTALL LARAVEL...(4 commands)
+	a. composer require Laravel/breeze --dev
 	(composer e dev dependice e add hobe) then..
-	php artisan breeze:install
+	b. php artisan breeze:install (then) 
+	c. php artisan migrate (then)
+	d. npm install
 
 1.1	php artisan make:model todo -mcr
 
