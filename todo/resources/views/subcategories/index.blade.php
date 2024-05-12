@@ -19,7 +19,8 @@
         </thead>
         <tbody>
             @forelse ($subcategories as $subcategory)
-                <tr>
+            
+            <tr class="{{$subcategory->deleted_at ? 'table-danger' : ''}}">                    
                     <td>{{$subcategory->id}}</td>
                     <td>{{$subcategory->name}}</td>
                     <td>{{$subcategory->category->name}}</td>
