@@ -13,7 +13,7 @@
             <tr>
                 <th>#</th>
                 <th>Subcategories</th>
-                <th>Name</th>
+                <th>Categories</th>
                 <th>Slug</th>
                 <th>Description</th>
                 <th>Image</th>
