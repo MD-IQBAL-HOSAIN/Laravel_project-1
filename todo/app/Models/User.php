@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -46,7 +48,24 @@ class User extends Authenticatable
         ];
     }
 
-    public function profile():HasOne{
+    public function profile():HasOne
+    {
         return $this->hasOne(Profile::class);
+    }
+
+
+    //tinkar with user table field name querry and change value (with using name properties).
+    protected function name():Attribute
+    {
+        return Attribute::make(            
+            get: fn(string $value) => strtoupper($value),
+            set: fn(string $value) => strtolower($value),
+        );
+
+    }
+    protected function getnameemailAtribute()
+    {
+        return $this->name . ' (' . $this->email.')';
+
     }
 }
