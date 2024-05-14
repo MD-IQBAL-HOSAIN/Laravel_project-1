@@ -1,8 +1,6 @@
-1. 	MUST INSTALL LARAVEL...(2 commands)
-	a. composer require Laravel/breeze --dev
+1. composer require Laravel/breeze --dev
 	(composer e dev dependice e add hobe) then..
-	b. php artisan breeze:install 
-	
+	php artisan breeze:install
 
 1.1	php artisan make:model todo -mcr
 
@@ -75,10 +73,6 @@
 
 17.	php artisan install:api
 	(api install code)
-18.	php artisan storge:link
-	( public folder a sstorage shortcut make hobe. ata very much important  )
-
-19. php artisan cache clear
 
 
 
