@@ -1,7 +1,17 @@
+0.	git project run system..
+	1. npm i
+	2. npm run build
+	3. composer update
+	4. php artisan migrate
+	5. php artisan db:seed
+	6. php artisan storage:link
+
+
 1. 	MUST INSTALL LARAVEL...(2 commands)
 	a. composer require Laravel/breeze --dev
 	(composer e dev dependice e add hobe) then..
 	b. php artisan breeze:install 
+	( breeze install dile route er path gulo remove hoye jay )
 	
 
 1.1	php artisan make:model todo -mcr
@@ -78,7 +88,10 @@
 18.	php artisan storge:link
 	( public folder a sstorage shortcut make hobe. ata very much important  )
 
-19. php artisan cache clear
+19.	php artisan cache clear
+
+20.	php artisan make:model product -mcrsfR
+	(  )
 
 
 
