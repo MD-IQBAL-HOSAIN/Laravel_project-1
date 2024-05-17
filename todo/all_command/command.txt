@@ -26,8 +26,8 @@
 
 2.	php artisan migrate
 
-	(er kaj hosse database a todos table a making kora. database/migration/2024_04_29_131748_create_todos_table.php ja ager command(1)
-	 er maddhome toiry hoice. niche evabe data debar por 	command chalale database a data in hobe.
+	(er kaj hosse database a todos table a making kora. database/migration/2024_04_29_	131748_create_todos_table.php ja ager command(1)
+	 er maddhome toiry hoice. niche evabe data debar por 	command chalale database a 	data in hobe.
 
  	public function up(): void {
    	
@@ -91,7 +91,7 @@
 19.	php artisan cache clear
 
 20.	php artisan make:model product -mcrsfR
-	(  )
+	( capital R mran Request  )
 
 
 

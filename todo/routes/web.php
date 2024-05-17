@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TodoController;
@@ -37,10 +38,12 @@ Route::get('/todo/add', [TodoController::class, 'create']);
 Route::get('/users', [UserController::class, 'index']);
 // Route::get('/categories', [CategoryController::class, 'index']);
 // Route::get('/subcategories', [SubcategoryController::class, 'index']);
-    
-});
 Route::resource('categories', CategoryController::class);
 Route::resource('subcategories', SubCategoryController::class);
+Route::resource('products', ProductController::class);
+Route::post('deleteimage/{id}', [ProductController::class, 'deleteImage'])->name('deleteimage');
+    
+});
 
 
 Route::get('/dashboard', function () {
