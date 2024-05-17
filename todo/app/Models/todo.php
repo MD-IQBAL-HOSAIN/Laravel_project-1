@@ -18,4 +18,9 @@ class todo extends Model
     {
         return $query->where('completed', 0);
     }
+
+    public function topics()
+    {
+        return $this->belongsToMany(topic::class);
+    }
 }

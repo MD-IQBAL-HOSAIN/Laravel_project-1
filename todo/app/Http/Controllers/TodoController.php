@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\todo;
+use App\Models\topic;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 use Termwind\Components\Dd;
@@ -16,7 +17,7 @@ class TodoController extends Controller
     {
         $title="todos testing";
         
-        return view('todo.index',['title'=>$title,'todos'=>todo::all()]);
+        return view('todo.index',['title'=>$title,'todos'=>todo::with('topics')->get()]);
         // return view('todo.index',['title'=>$title]);
     }
 
@@ -25,7 +26,8 @@ class TodoController extends Controller
      */
     public function create()
     {
-        return view('todo.create');
+        $topics = topic::pluck('title','id');        
+        return view('todo.create',compact('topics'));
     }
 
     /**
@@ -34,13 +36,19 @@ class TodoController extends Controller
     public function store(Request $request)
     {
         // echo "todo store function called";
-        // dd($request->all()); //var_dum laravel
+        // dd($request->all()); 
 
         $todo = new todo();
         $todo->title = $request->title;
         $todo->description = $request->description;
         $todo->completed = $request->completed ?? 0;
         $todo->save();
+        
+        // $todo->topics()->attach($request->topics); 
+        //attach save er moto kaj kore
+        //sync attach and detach er kaj kore
+        $todo->topics()->sync($request->topics);
+
         return redirect()->route('todo.index')->with('success', 'Todo created successfully.');
     }
 
