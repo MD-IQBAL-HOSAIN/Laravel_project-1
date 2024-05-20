@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class todo extends Model
 {
@@ -22,5 +23,11 @@ class todo extends Model
     public function topics()
     {
         return $this->belongsToMany(topic::class);
+    }
+
+
+    public function comments(): MorphMany
+    {
+        return $this->morphMany(comment::class, 'commentable');
     }
 }
