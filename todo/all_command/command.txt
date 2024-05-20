@@ -88,10 +88,12 @@
 18.	php artisan storge:link
 	( public folder a sstorage shortcut make hobe. ata very much important  )
 
-19.	php artisan cache clear
+19.	php artisan cache:clear
 
 20.	php artisan make:model product -mcrsfR
 	( capital R mran Request  )
+
+21.	
 
 
 
