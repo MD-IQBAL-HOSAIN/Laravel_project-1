@@ -96,12 +96,4 @@
 21.	tinker: use App\Models\comment;
 	( jokhon kono class na pay tinker, tkn manually path set korte hoy )
 
-
-
-
-
-
-
-
-
-
+22.	
