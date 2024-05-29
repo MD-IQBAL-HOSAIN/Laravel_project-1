@@ -4,7 +4,7 @@ a. composer create-project laravel/laravel todo
 b. cd todo
 c. php artisan serve
 d. php artisan migrate
-e. composer require laravel/breeze --dev
+e. composer require laravel/breeze --dev (Ai cmd tei login | Registration option asbe)
 f. php artisan breeze:install
 g. php artisan migrate
 
