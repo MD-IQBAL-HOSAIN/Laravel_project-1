@@ -1,2 +1,3 @@
 # Laravel_project-1
-Ecommerce Based Project.
+Ecommerce Project.
+(Laravel Language Based Project).
