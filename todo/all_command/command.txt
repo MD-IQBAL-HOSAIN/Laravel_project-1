@@ -109,6 +109,10 @@ g. php artisan migrate
 21.	tinker: use App\Models\comment;
 	( jokhon kono class na pay tinker, tkn manually path set korte hoy )
 
-22.	
+22.	#####################################
+	For middleware:
+	step-1: Bootstrao->app.php>
+	step-2: App->http->Middleware->admin.php (j middleware create korte chai)
+	#######################################
 
 23.	
